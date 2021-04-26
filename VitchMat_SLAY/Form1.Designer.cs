@@ -48,6 +48,7 @@ namespace VitchMat_SLAY
             this.t_raz.Name = "t_raz";
             this.t_raz.Size = new System.Drawing.Size(51, 20);
             this.t_raz.TabIndex = 0;
+            this.t_raz.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.t_raz_KeyPress);
             // 
             // darkLabel1
             // 
@@ -75,6 +76,8 @@ namespace VitchMat_SLAY
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(474, 149);
             this.dataGridView1.TabIndex = 49;
+            this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
+            this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
             // darkButton1
             // 
@@ -88,6 +91,8 @@ namespace VitchMat_SLAY
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -95,6 +100,7 @@ namespace VitchMat_SLAY
             this.dataGridView2.Location = new System.Drawing.Point(11, 242);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
@@ -123,7 +129,7 @@ namespace VitchMat_SLAY
             this.Controls.Add(this.darkLabel1);
             this.Controls.Add(this.t_raz);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Решение СЛАУ";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
