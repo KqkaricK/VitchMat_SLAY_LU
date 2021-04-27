@@ -35,6 +35,7 @@ namespace VitchMat_SLAY
             this.darkButton1 = new DarkUI.Controls.DarkButton();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.darkButton2 = new DarkUI.Controls.DarkButton();
+            this.darkButton3 = new DarkUI.Controls.DarkButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -117,11 +118,22 @@ namespace VitchMat_SLAY
             this.darkButton2.Text = "Метод Гаусса";
             this.darkButton2.Click += new System.EventHandler(this.darkButton2_Click);
             // 
+            // darkButton3
+            // 
+            this.darkButton3.Location = new System.Drawing.Point(111, 205);
+            this.darkButton3.Name = "darkButton3";
+            this.darkButton3.Padding = new System.Windows.Forms.Padding(5);
+            this.darkButton3.Size = new System.Drawing.Size(144, 23);
+            this.darkButton3.TabIndex = 53;
+            this.darkButton3.Text = "Метод  Жордана-Гаусса";
+            this.darkButton3.Click += new System.EventHandler(this.darkButton3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 437);
+            this.Controls.Add(this.darkButton3);
             this.Controls.Add(this.darkButton2);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.darkButton1);
@@ -145,6 +157,7 @@ namespace VitchMat_SLAY
         private DarkUI.Controls.DarkButton darkButton1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private DarkUI.Controls.DarkButton darkButton2;
+        private DarkUI.Controls.DarkButton darkButton3;
     }
 }
 
