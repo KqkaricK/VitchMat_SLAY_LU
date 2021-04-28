@@ -36,6 +36,7 @@ namespace VitchMat_SLAY
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.darkButton2 = new DarkUI.Controls.DarkButton();
             this.darkButton3 = new DarkUI.Controls.DarkButton();
+            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +76,7 @@ namespace VitchMat_SLAY
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(474, 149);
+            this.dataGridView1.Size = new System.Drawing.Size(474, 203);
             this.dataGridView1.TabIndex = 49;
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
@@ -98,19 +99,19 @@ namespace VitchMat_SLAY
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.ColumnHeadersVisible = false;
-            this.dataGridView2.Location = new System.Drawing.Point(11, 242);
+            this.dataGridView2.Location = new System.Drawing.Point(506, 41);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(474, 149);
+            this.dataGridView2.Size = new System.Drawing.Size(73, 203);
             this.dataGridView2.TabIndex = 51;
             // 
             // darkButton2
             // 
-            this.darkButton2.Location = new System.Drawing.Point(11, 205);
+            this.darkButton2.Location = new System.Drawing.Point(11, 259);
             this.darkButton2.Name = "darkButton2";
             this.darkButton2.Padding = new System.Windows.Forms.Padding(5);
             this.darkButton2.Size = new System.Drawing.Size(94, 23);
@@ -120,7 +121,7 @@ namespace VitchMat_SLAY
             // 
             // darkButton3
             // 
-            this.darkButton3.Location = new System.Drawing.Point(111, 205);
+            this.darkButton3.Location = new System.Drawing.Point(122, 259);
             this.darkButton3.Name = "darkButton3";
             this.darkButton3.Padding = new System.Windows.Forms.Padding(5);
             this.darkButton3.Size = new System.Drawing.Size(144, 23);
@@ -128,11 +129,22 @@ namespace VitchMat_SLAY
             this.darkButton3.Text = "Метод  Жордана-Гаусса";
             this.darkButton3.Click += new System.EventHandler(this.darkButton3_Click);
             // 
+            // darkLabel2
+            // 
+            this.darkLabel2.AutoSize = true;
+            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel2.Location = new System.Drawing.Point(503, 18);
+            this.darkLabel2.Name = "darkLabel2";
+            this.darkLabel2.Size = new System.Drawing.Size(41, 13);
+            this.darkLabel2.TabIndex = 54;
+            this.darkLabel2.Text = "Корни:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 437);
+            this.ClientSize = new System.Drawing.Size(597, 301);
+            this.Controls.Add(this.darkLabel2);
             this.Controls.Add(this.darkButton3);
             this.Controls.Add(this.darkButton2);
             this.Controls.Add(this.dataGridView2);
@@ -158,6 +170,7 @@ namespace VitchMat_SLAY
         private System.Windows.Forms.DataGridView dataGridView2;
         private DarkUI.Controls.DarkButton darkButton2;
         private DarkUI.Controls.DarkButton darkButton3;
+        private DarkUI.Controls.DarkLabel darkLabel2;
     }
 }
 
