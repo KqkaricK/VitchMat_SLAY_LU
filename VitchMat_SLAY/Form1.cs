@@ -31,7 +31,11 @@ namespace VitchMat_SLAY
                     dataGridView1.Rows[i].Cells[j].Value = 0;
                 }
             }
-            dataGridView2.RowCount = Convert.ToInt32(t_raz.Text);
+            dataGridView2.RowCount = dataGridView1.RowCount;
+            L.RowCount = dataGridView1.RowCount;
+            L.ColumnCount = dataGridView1.RowCount;
+            U.RowCount = dataGridView1.RowCount;
+            U.ColumnCount = dataGridView1.RowCount;
         }
         double Slay(int i, int j)
         {
@@ -46,38 +50,6 @@ namespace VitchMat_SLAY
             else
             {
                 Razmer();
-            }
-        }
-        private void darkButton2_Click(object sender, EventArgs e) //гаусса
-        {
-            for (int k = 0; k < dataGridView1.RowCount; k++)  //Приводим к ступ. виду
-            {
-                for (int i = 0; i < dataGridView1.RowCount; i++)
-                {
-                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                    {
-                        if ((i > k) && (j > k))
-                        {
-                            dataGridView1.Rows[i].Cells[j].Value = Slay(i, j) - (Slay(i, k) * Slay(k, j) / Slay(k, k));
-                        }
-                    }
-                }
-            }
-            for (int j = 0; j < dataGridView1.RowCount; j++) //Добавляем 0
-            {
-                for (int i = 1 + j; i < dataGridView1.RowCount; i++)
-                {
-                    dataGridView1.Rows[i].Cells[j].Value = 0;
-                }
-            }
-            for (int i = dataGridView1.RowCount - 1; i >= 0; i--) //Обратный ход
-            {
-                double s = 0;
-                for (int j = i + 1; j < dataGridView1.RowCount; j++)
-                {
-                    s += Convert.ToDouble(dataGridView2.Rows[j].Cells[0].Value.ToString()) * Slay(i, j);
-                }
-                dataGridView2.Rows[i].Cells[0].Value = (Slay(i, dataGridView1.ColumnCount - 1) - s) / Slay(i, i);
             }
         }
 
@@ -118,49 +90,20 @@ namespace VitchMat_SLAY
             tb.KeyPress += new KeyPressEventHandler(dataGridView1_KeyPress);
         }
 
-        private void darkButton3_Click(object sender, EventArgs e)  //жордана-гаусса
+        /*Куча проверок закончена*/
+
+        private void darkButton2_Click_1(object sender, EventArgs e)
         {
-            for (int k = 0; k < dataGridView1.RowCount; k++)  //Приводим к ступ. виду
+            for (int i = 0; i < dataGridView1.RowCount; i++) //+0
             {
-                for (int i = 0; i < dataGridView1.RowCount; i++)
+                for (int j = 0; j < dataGridView1.ColumnCount - 1; j++)
                 {
-                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    U.Rows[i].Cells[j].Value = dataGridView1.Rows[i].Cells[j].Value;
+                    if (i < j)
                     {
-                        if ((i > k) && (j > k))
-                        {
-                            dataGridView1.Rows[i].Cells[j].Value = Slay(i, j) - (Slay(i, k) * Slay(k, j) / Slay(k, k));
-                        }
+                        L.Rows[i].Cells[j].Value = 0;
                     }
                 }
-            }
-            for (int k = dataGridView1.RowCount - 1; k >= 0; k--) 
-            {
-                for (int i = dataGridView1.RowCount - 2; i >= 0; i--)
-                {
-                    if (i < k)
-                    {
-                        dataGridView1.Rows[i].Cells[dataGridView1.ColumnCount - 1].Value = Slay(i, dataGridView1.ColumnCount - 1) - (Slay(i, k) * Slay(k, dataGridView1.ColumnCount - 1) / Slay(k, k));
-                    }
-                }
-            }
-            for (int j = 0; j < dataGridView1.RowCount; j++) //Добавляем 0
-            {
-                for (int i = 0; i < dataGridView1.RowCount; i++)
-                { 
-                    if (i != j)
-                    {
-                        dataGridView1.Rows[i].Cells[j].Value = 0;
-                    }
-                }
-            }
-            for (int i = dataGridView1.RowCount - 1; i >= 0; i--) //Обратный ход
-            {
-                double s = 0;
-                for (int j = i + 1; j < dataGridView1.RowCount; j++)
-                {
-                    s += Convert.ToDouble(dataGridView2.Rows[j].Cells[0].Value.ToString()) * Slay(i, j);
-                }
-                dataGridView2.Rows[i].Cells[0].Value = (Slay(i, dataGridView1.ColumnCount - 1) - s) / Slay(i, i);
             }
         }
     }
