@@ -98,10 +98,41 @@ namespace VitchMat_SLAY
             {
                 for (int j = 0; j < dataGridView1.ColumnCount - 1; j++)
                 {
-                    U.Rows[i].Cells[j].Value = dataGridView1.Rows[i].Cells[j].Value;
                     if (i < j)
                     {
                         L.Rows[i].Cells[j].Value = 0;
+                    }
+                    else if (i >= j)
+                    {
+                        U.Rows[i].Cells[j].Value = 0;
+                    }
+                }
+            }
+            for (int i = 0; i < dataGridView1.RowCount; i++) 
+            {
+                for (int k = i; k < dataGridView1.RowCount; k++)
+                {
+                    double S = 0;
+                    for (int j = 0; j < i; j++)
+                    {
+                        S += (Convert.ToDouble(L.Rows[i].Cells[j].Value.ToString()) * Convert.ToDouble(U.Rows[j].Cells[k].Value.ToString()));
+                    }
+                    U.Rows[i].Cells[k].Value = Slay(i, k) - S;
+                }
+                for (int k = i; k < dataGridView1.RowCount; k++)
+                {
+                    if (i == k)
+                    {
+                        L.Rows[i].Cells[i].Value = 1;
+                    }
+                    else
+                    {
+                        double S = 0;
+                        for (int j = 0; j < i; j++)
+                        {
+                            S += (Convert.ToDouble(L.Rows[k].Cells[j].Value.ToString()) * Convert.ToDouble(U.Rows[j].Cells[i].Value.ToString()));
+                        }
+                        L.Rows[k].Cells[i].Value = (Slay(k, i) - S) / Convert.ToDouble(U.Rows[i].Cells[i].Value.ToString());
                     }
                 }
             }
