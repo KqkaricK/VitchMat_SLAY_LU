@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitchMat_SLAY", "VitchMat_SLAY\VitchMat_SLAY.csproj", "{974F0856-5638-4554-9B24-E6521211DDC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitchMat_SLAY_LU", "VitchMat_SLAY\VitchMat_SLAY_LU.csproj", "{974F0856-5638-4554-9B24-E6521211DDC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

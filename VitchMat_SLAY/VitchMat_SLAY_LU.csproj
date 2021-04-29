@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{974F0856-5638-4554-9B24-E6521211DDC0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>VitchMat_SLAY</RootNamespace>
-    <AssemblyName>VitchMat_SLAY</AssemblyName>
+    <RootNamespace>VitchMat_SLAY_LU</RootNamespace>
+    <AssemblyName>VitchMat_SLAY_LU</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -68,6 +68,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
