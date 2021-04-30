@@ -21,6 +21,8 @@ namespace VitchMat_SLAY
         {
             dataGridView1.Rows.Clear();
             dataGridView2.Rows.Clear();
+            L.Rows.Clear();
+            U.Rows.Clear();
             dataGridView1.RowCount = Convert.ToInt32(t_raz.Text);
             dataGridView1.ColumnCount = Convert.ToInt32(t_raz.Text) + 1;
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -32,6 +34,7 @@ namespace VitchMat_SLAY
                 }
             }
             dataGridView2.RowCount = dataGridView1.RowCount;
+            dataGridView3.RowCount = dataGridView1.RowCount;
             L.RowCount = dataGridView1.RowCount;
             L.ColumnCount = dataGridView1.RowCount;
             U.RowCount = dataGridView1.RowCount;
@@ -96,6 +99,7 @@ namespace VitchMat_SLAY
         {
             for (int i = 0; i < dataGridView1.RowCount; i++) //+0
             {
+                dataGridView2.Rows[i].Cells[0].Value = 0;
                 for (int j = 0; j < dataGridView1.ColumnCount - 1; j++)
                 {
                     if (i < j)
@@ -108,7 +112,7 @@ namespace VitchMat_SLAY
                     }
                 }
             }
-            for (int i = 0; i < dataGridView1.RowCount; i++) 
+            for (int i = 0; i < dataGridView1.RowCount; i++)  //Вычисление L и U
             {
                 for (int k = i; k < dataGridView1.RowCount; k++)
                 {
@@ -135,6 +139,24 @@ namespace VitchMat_SLAY
                         L.Rows[k].Cells[i].Value = (Slay(k, i) - S) / Convert.ToDouble(U.Rows[i].Cells[i].Value.ToString());
                     }
                 }
+            }
+            for (int i = 0; i < dataGridView1.RowCount; i++) // решение Ly = B
+            {
+                double S = 0;
+                for (int k = 0; k < i; k++)
+                {
+                    S = Convert.ToDouble(L.Rows[i].Cells[k].Value.ToString()) * Convert.ToDouble(dataGridView3.Rows[k].Cells[0].Value.ToString());
+                }
+                dataGridView3.Rows[i].Cells[0].Value = Convert.ToDouble(dataGridView1.Rows[i].Cells[dataGridView1.ColumnCount - 1].Value.ToString()) - S;
+            }
+            for (int i = dataGridView1.RowCount - 1; i >= 0; i--) // решение Ux = y
+            {
+                double S = 0;
+                for (int k = dataGridView1.RowCount - 1; k > 0; k--)
+                {
+                    S = Convert.ToDouble(U.Rows[i].Cells[k].Value.ToString()) * Convert.ToDouble(dataGridView2.Rows[k].Cells[0].Value.ToString());
+                }
+                dataGridView2.Rows[i].Cells[0].Value = (Convert.ToDouble(dataGridView3.Rows[i].Cells[0].Value.ToString()) - S) / Convert.ToDouble(U.Rows[i].Cells[i].Value.ToString());
             }
         }
     }

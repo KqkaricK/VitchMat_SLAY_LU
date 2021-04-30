@@ -40,10 +40,12 @@ namespace VitchMat_SLAY
             this.U = new System.Windows.Forms.DataGridView();
             this.darkLabel3 = new DarkUI.Controls.DarkLabel();
             this.darkLabel4 = new DarkUI.Controls.DarkLabel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.U)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // t_raz
@@ -145,11 +147,13 @@ namespace VitchMat_SLAY
             this.L.Location = new System.Drawing.Point(33, 255);
             this.L.Margin = new System.Windows.Forms.Padding(2);
             this.L.Name = "L";
+            this.L.ReadOnly = true;
             this.L.RowHeadersVisible = false;
             this.L.RowHeadersWidth = 51;
             this.L.RowTemplate.Height = 24;
             this.L.Size = new System.Drawing.Size(203, 203);
             this.L.TabIndex = 56;
+            this.L.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
             // U
             // 
@@ -162,11 +166,13 @@ namespace VitchMat_SLAY
             this.U.Location = new System.Drawing.Point(282, 255);
             this.U.Margin = new System.Windows.Forms.Padding(2);
             this.U.Name = "U";
+            this.U.ReadOnly = true;
             this.U.RowHeadersVisible = false;
             this.U.RowHeadersWidth = 51;
             this.U.RowTemplate.Height = 24;
             this.U.Size = new System.Drawing.Size(203, 203);
             this.U.TabIndex = 57;
+            this.U.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
             // darkLabel3
             // 
@@ -188,11 +194,31 @@ namespace VitchMat_SLAY
             this.darkLabel4.TabIndex = 59;
             this.darkLabel4.Text = "U:";
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.ColumnHeadersVisible = false;
+            this.dataGridView3.Location = new System.Drawing.Point(616, 41);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersVisible = false;
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(73, 203);
+            this.dataGridView3.TabIndex = 60;
+            this.dataGridView3.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 469);
+            this.ClientSize = new System.Drawing.Size(589, 469);
+            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.darkLabel4);
             this.Controls.Add(this.darkLabel3);
             this.Controls.Add(this.U);
@@ -210,6 +236,7 @@ namespace VitchMat_SLAY
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.L)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.U)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,6 +255,7 @@ namespace VitchMat_SLAY
         private System.Windows.Forms.DataGridView U;
         private DarkUI.Controls.DarkLabel darkLabel3;
         private DarkUI.Controls.DarkLabel darkLabel4;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }
 
