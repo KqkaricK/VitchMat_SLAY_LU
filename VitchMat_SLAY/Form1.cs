@@ -60,7 +60,11 @@ namespace VitchMat_SLAY
 
         bool Chek()
         {
-            if (t_raz.Text == "0" || t_raz.Text == "1" || Convert.ToInt32(t_raz.Text) > 10)
+            if (t_raz.Text == "")
+            {
+                return false;
+            }
+            else if(Convert.ToInt32(t_raz.Text) < 2 || Convert.ToInt32(t_raz.Text) > 10)
             {
                 return false;
             }
@@ -145,7 +149,7 @@ namespace VitchMat_SLAY
                 double S = 0;
                 for (int k = 0; k < i; k++)
                 {
-                    S = Convert.ToDouble(L.Rows[i].Cells[k].Value.ToString()) * Convert.ToDouble(dataGridView3.Rows[k].Cells[0].Value.ToString());
+                    S += Convert.ToDouble(L.Rows[i].Cells[k].Value.ToString()) * Convert.ToDouble(dataGridView3.Rows[k].Cells[0].Value.ToString());
                 }
                 dataGridView3.Rows[i].Cells[0].Value = Convert.ToDouble(dataGridView1.Rows[i].Cells[dataGridView1.ColumnCount - 1].Value.ToString()) - S;
             }
@@ -154,7 +158,7 @@ namespace VitchMat_SLAY
                 double S = 0;
                 for (int k = dataGridView1.RowCount - 1; k > 0; k--)
                 {
-                    S = Convert.ToDouble(U.Rows[i].Cells[k].Value.ToString()) * Convert.ToDouble(dataGridView2.Rows[k].Cells[0].Value.ToString());
+                    S += Convert.ToDouble(U.Rows[i].Cells[k].Value.ToString()) * Convert.ToDouble(dataGridView2.Rows[k].Cells[0].Value.ToString());
                 }
                 dataGridView2.Rows[i].Cells[0].Value = (Convert.ToDouble(dataGridView3.Rows[i].Cells[0].Value.ToString()) - S) / Convert.ToDouble(U.Rows[i].Cells[i].Value.ToString());
             }

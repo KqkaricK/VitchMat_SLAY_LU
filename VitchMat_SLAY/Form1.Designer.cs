@@ -41,6 +41,7 @@ namespace VitchMat_SLAY
             this.darkLabel3 = new DarkUI.Controls.DarkLabel();
             this.darkLabel4 = new DarkUI.Controls.DarkLabel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.darkLabel5 = new DarkUI.Controls.DarkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L)).BeginInit();
@@ -106,7 +107,7 @@ namespace VitchMat_SLAY
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.ColumnHeadersVisible = false;
-            this.dataGridView2.Location = new System.Drawing.Point(503, 41);
+            this.dataGridView2.Location = new System.Drawing.Point(541, 255);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -120,7 +121,7 @@ namespace VitchMat_SLAY
             // 
             this.darkLabel2.AutoSize = true;
             this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Location = new System.Drawing.Point(500, 18);
+            this.darkLabel2.Location = new System.Drawing.Point(495, 260);
             this.darkLabel2.Name = "darkLabel2";
             this.darkLabel2.Size = new System.Drawing.Size(41, 13);
             this.darkLabel2.TabIndex = 54;
@@ -128,7 +129,7 @@ namespace VitchMat_SLAY
             // 
             // darkButton2
             // 
-            this.darkButton2.Location = new System.Drawing.Point(503, 255);
+            this.darkButton2.Location = new System.Drawing.Point(541, 13);
             this.darkButton2.Name = "darkButton2";
             this.darkButton2.Padding = new System.Windows.Forms.Padding(5);
             this.darkButton2.Size = new System.Drawing.Size(73, 23);
@@ -202,7 +203,7 @@ namespace VitchMat_SLAY
             this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.ColumnHeadersVisible = false;
-            this.dataGridView3.Location = new System.Drawing.Point(616, 41);
+            this.dataGridView3.Location = new System.Drawing.Point(541, 41);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
@@ -211,13 +212,23 @@ namespace VitchMat_SLAY
             this.dataGridView3.RowTemplate.Height = 24;
             this.dataGridView3.Size = new System.Drawing.Size(73, 203);
             this.dataGridView3.TabIndex = 60;
-            this.dataGridView3.Visible = false;
+            // 
+            // darkLabel5
+            // 
+            this.darkLabel5.AutoSize = true;
+            this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel5.Location = new System.Drawing.Point(521, 41);
+            this.darkLabel5.Name = "darkLabel5";
+            this.darkLabel5.Size = new System.Drawing.Size(15, 13);
+            this.darkLabel5.TabIndex = 61;
+            this.darkLabel5.Text = "y:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 469);
+            this.ClientSize = new System.Drawing.Size(625, 469);
+            this.Controls.Add(this.darkLabel5);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.darkLabel4);
             this.Controls.Add(this.darkLabel3);
@@ -256,6 +267,7 @@ namespace VitchMat_SLAY
         private DarkUI.Controls.DarkLabel darkLabel3;
         private DarkUI.Controls.DarkLabel darkLabel4;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private DarkUI.Controls.DarkLabel darkLabel5;
     }
 }
 
